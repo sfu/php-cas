@@ -2,8 +2,7 @@
 	"name": "sfu/php-cas",
 	"type": "library",
 	"description": "PHP library for SFU CAS",
-	"keywords": ["CAS",
-	"JASIG"],
+	"keywords": ["CAS",	"JASIG"],
 	"license": "MIT",
 	"version": "5.0",
 	"authors": [{
@@ -18,8 +17,5 @@
 		"psr-0": {
 			"SFU\\CAS": "src"
 		}
-	},
-	"require": {
-		"php": ">=5.3.0"
-	},
+	}
 }
