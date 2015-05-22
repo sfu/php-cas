@@ -1,0 +1,8 @@
+{
+    "name": "sfu/php-cas",
+    "autoload": {
+        "psr-0" : {
+            "SFU\\CAS" : "src"
+        }
+    }
+}
