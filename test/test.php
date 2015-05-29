@@ -1,10 +1,10 @@
 <?php
 
-require("../src/SFU/CAS/Options.php");
-require("../src/SFU/CAS/AuthInfo.php");
-require("../src/SFU/CAS/CAS.php");
+require("../src/CASOptions.php");
+require("../src/CASAuthInfo.php");
+require("../src/CAS.php");
 
-CAS\CAS::requireLogin();
+SFU\CAS::requireLogin();
 
 print("<pre> Login successful. Session: \n\n");
 print_r($_SESSION);

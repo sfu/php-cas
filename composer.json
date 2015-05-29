@@ -14,8 +14,8 @@
 		"email": "rcawston@sfu.ca"
 	}],
 	"autoload": {
-		"psr-0": {
-			"SFU\\CAS": "src"
-		}
-	}
+	  "psr-4": {
+            "SFU\\": "src"
+        }
+	},
 }

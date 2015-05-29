@@ -1,4 +1,4 @@
-<?php namespace CAS;
+<?php namespace SFU;
 
 /**
  * SFU CAS library for PHP: Options class
@@ -6,12 +6,11 @@
  * Modify this file for your environment.
  *
  * @author Mike Sollanych, Ross Cawston
- * @version 5.0
- * @package SFU/CAS
+ * @package sfu/php-cas
  */
 
 
-class Options {
+class CASOptions {
 
 	// CAS server name
 	static function ServerName()		{ return "cas.sfu.ca"; }

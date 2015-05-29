@@ -1,4 +1,4 @@
-<?php namespace CAS;
+<?php namespace SFU;
 
 /**
  * SFU CAS library for PHP: CAS class
@@ -6,8 +6,7 @@
  * Fifth-generation simplified SFU CAS authentication solution for PHP.
  *
  * @author Mike Sollanych, Ross Cawston
- * @version 5.0
- * @package SFU/CAS
+ * @package sfu/php-cas
  */
 
 class CAS {
@@ -147,7 +146,7 @@ class CAS {
 	/**
 	 * checkTicket: checks the supplied ticket against the CAS server.
 	 *
-	 * @return AuthInfo object - Auth information about the user that logged in.
+	 * @return CASAuthInfo object - Auth information about the user that logged in.
 	 */
 	static function checkTicket() {
 
@@ -178,18 +177,18 @@ class CAS {
 		if (strlen($maillist) < 1) $maillist = false;
 
 		// Create and return a UserInfo object with details from CAS
-		return new AuthInfo($username, $authtype, $maillist);
+		return new CASAuthInfo($username, $authtype, $maillist);
 	}
 
 	/**
 	 * userLogin: log the user in. Assumes ticket has been checked, etc.
-	 * @param AuthInfo $authinfo - identifies the of the user to log in.
+	 * @param CASAuthInfo $authinfo - identifies the of the user to log in.
 	 */
 	public static function userLogin($authinfo) {
 
 		// Assign session variables.
 		$_SESSION['cas_username'] = $authinfo->getUsername();
-		$_SESSION["cas_email"] = $authinfo->getUsername() . '@' . Options::EmailDomain();
+		$_SESSION["cas_email"] = $authinfo->getUsername() . '@' . CASOptions::EmailDomain();
 		$_SESSION['cas_logged_in'] = true;
 		$_SESSION['cas_authtype'] = $authinfo->getAuthType();
 		if ($authinfo->getMailList() !== false)
@@ -242,7 +241,7 @@ class CAS {
 
 	// The CAS login page
 	private static function casLoginURL($maillist = false) {
-		$url = Options::LoginURL() . '?service='.urlencode(self::getReturnURL());
+		$url = CASOptions::LoginURL() . '?service='.urlencode(self::getReturnURL());
 		// Is maillist specified?
 		if ($maillist !== false) {
 			// Yes; is it a list of maillists?
@@ -258,7 +257,7 @@ class CAS {
 
 	// The CAS logout page
 	private static function casLogoutURL($app_description = false) {
-		 $url = Options::LogoutURL();
+		 $url = CASOptions::LogoutURL();
 		 if ($app_description) $url .= '?app='.urlencode($app_description);
 		 return $url;
 	}
@@ -266,7 +265,7 @@ class CAS {
 	// The CAS validation page
 	private static function casValidationURL($ticket, $maillist = false) {
 
-		$url  = Options::ValidateURL();
+		$url  = CASOptions::ValidateURL();
 		$url .= "?service=".urlencode(self::getReturnURL());
 		$url .= "&ticket=".$ticket;
 

@@ -1,14 +1,13 @@
-<?php namespace CAS;
+<?php namespace SFU;
 
 /**
  * SFU CAS library for PHP: Authentication Information class
  *
  * @author Mike Sollanych, Ross Cawston
- * @version 5.0
- * @package SFU/CAS
+ * @package sfu/php-cas
  */
 
-class AuthInfo {
+class CASAuthInfo {
 	// The Username returned by CAS
 	private $username;
 	// The AuthType used by CAS to identify the user (e.g. "SFU")
