@@ -5,7 +5,6 @@
 	"keywords": ["CAS",
 	"JASIG"],
 	"license": "MIT",
-	"version": "5.0",
 	"authors": [{
 		"name": "Mike Sollanych",
 		"email": "msollany@sfu.ca"
