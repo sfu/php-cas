@@ -2,7 +2,8 @@
 	"name": "sfu/php-cas",
 	"type": "library",
 	"description": "PHP library for SFU CAS",
-	"keywords": ["CAS",	"JASIG"],
+	"keywords": ["CAS",
+	"JASIG"],
 	"license": "MIT",
 	"version": "5.0",
 	"authors": [{
@@ -14,8 +15,8 @@
 		"email": "rcawston@sfu.ca"
 	}],
 	"autoload": {
-	  "psr-4": {
-            "SFU\\": "src"
-        }
+		"psr-4": {
+			"SFU\\": "src"
+		}
 	}
 }
